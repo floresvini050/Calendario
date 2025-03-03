@@ -6,9 +6,27 @@
 
             for ($i = 0; $i < 7; $i++)
             {
+                $dia = date('d');
                 if (isset($semana[$i]))
                 {
-                    echo "<td>{$semana[$i]}</td>";
+                    if ($i == 6)
+                    {
+                        echo "<td><b>{$semana[$i]}<b\></td>"; 
+                    }
+
+                    elseif($i == 0)
+                    {
+                        echo "<td style= 'color: red'>{$semana[$i]}</td>";
+                    }
+                    elseif ($semana[$i] == $dia)
+                    {
+                        echo "<td><b>{$semana[$i]}<b\></td>";    
+                    }
+                    else
+                    {
+                        echo "<td>{$semana[$i]}</td>";
+                    }
+                    
                 }
 
                 else
@@ -43,8 +61,13 @@
                 }
                 $dia++;
             }
+
+            
+
         }
+
     ?>
+
     <table border = "1">
 
         <tr>
